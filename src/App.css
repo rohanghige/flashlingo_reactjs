@@ -2,37 +2,57 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.controls-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.slider-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.dropdown-container {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  gap: 20px;
+  margin: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.flashcard-grid {
+  display: grid;
+  gap: 10px;
+  padding: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.flashcard {
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  transition: transform 0.3s, background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+.flashcard:hover {
+  transform: scale(1.05);
+  background-color: #d3d3d3; /* Light gray background */
+  color: #000; /* Black text color for contrast */
+}
+
+.flashcard.flipped {
+  background-color: #000; /* Black background */
+  color: #fff; /* White text color */
+}
+
+.flashcard.flipped:hover {
+  background-color: #d3d3d3; /* Light gray background */
+  color: #000; /* Black text color for contrast */
 }
