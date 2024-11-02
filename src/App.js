@@ -47,8 +47,10 @@ const App = () => {
   const defaultBackLanguage = languageKeys.length > 1 ? languageKeys[1] : defaultFrontLanguage;
 
   const [fontSize, setFontSize] = useState(120);
-  const [clickedCards, setClickedCards] = useState(Array(35).fill(false));
-  const [flippedCards, setFlippedCards] = useState(Array(35).fill(false));
+  const [clickedVowelCards, setClickedVowelCards] = useState(Array(16).fill(false));
+  const [flippedVowelCards, setFlippedVowelCards] = useState(Array(16).fill(false));
+  const [clickedConsonantCards, setClickedConsonantCards] = useState(Array(19).fill(false));
+  const [flippedConsonantCards, setFlippedConsonantCards] = useState(Array(19).fill(false));
   const [frontLanguage, setFrontLanguage] = useState(defaultFrontLanguage);
   const [backLanguage, setBackLanguage] = useState(defaultBackLanguage);
   const [vowelFlashcardsData, setVowelFlashcardsData] = useState([]);
@@ -78,24 +80,38 @@ const App = () => {
     setFontSize(event.target.value);
   };
 
-  const handleCardClick = (index) => {
-    const newClickedCards = [...clickedCards];
+  const handleVowelCardClick = (index) => {
+    const newClickedCards = [...clickedVowelCards];
     newClickedCards[index] = true;
-    setClickedCards(newClickedCards);
+    setClickedVowelCards(newClickedCards);
   };
 
-  const handleCardFlip = (index) => {
-    const newFlippedCards = [...flippedCards];
+  const handleVowelCardFlip = (index) => {
+    const newFlippedCards = [...flippedVowelCards];
     newFlippedCards[index] = !newFlippedCards[index];
-    setFlippedCards(newFlippedCards);
+    setFlippedVowelCards(newFlippedCards);
+  };
+
+  const handleConsonantCardClick = (index) => {
+    const newClickedCards = [...clickedConsonantCards];
+    newClickedCards[index] = true;
+    setClickedConsonantCards(newClickedCards);
+  };
+
+  const handleConsonantCardFlip = (index) => {
+    const newFlippedCards = [...flippedConsonantCards];
+    newFlippedCards[index] = !newFlippedCards[index];
+    setFlippedConsonantCards(newFlippedCards);
   };
 
   const handleResetBordersClick = () => {
-    setClickedCards(Array(35).fill(false));
+    setClickedVowelCards(Array(16).fill(false));
+    setClickedConsonantCards(Array(19).fill(false));
   };
 
   const handleResetFlipsClick = () => {
-    setFlippedCards(Array(35).fill(false));
+    setFlippedVowelCards(Array(16).fill(false));
+    setFlippedConsonantCards(Array(19).fill(false));
   };
 
   const handleFrontLanguageChange = (event) => {
@@ -147,20 +163,20 @@ const App = () => {
           <h2>Vowels</h2>
           <FlashcardGrid
             fontSize={fontSize}
-            clickedCards={clickedCards}
-            flippedCards={flippedCards}
-            handleCardClick={handleCardClick}
-            handleCardFlip={handleCardFlip}
+            clickedCards={clickedVowelCards}
+            flippedCards={flippedVowelCards}
+            handleCardClick={handleVowelCardClick}
+            handleCardFlip={handleVowelCardFlip}
             flashcardsData={vowelFlashcardsData}
             columns={8}
           />
           <h2>Consonants</h2>
           <FlashcardGrid
             fontSize={fontSize}
-            clickedCards={clickedCards}
-            flippedCards={flippedCards}
-            handleCardClick={handleCardClick}
-            handleCardFlip={handleCardFlip}
+            clickedCards={clickedConsonantCards}
+            flippedCards={flippedConsonantCards}
+            handleCardClick={handleConsonantCardClick}
+            handleCardFlip={handleConsonantCardFlip}
             flashcardsData={consonantFlashcardsData}
             columns={5}
           />
@@ -170,6 +186,6 @@ const App = () => {
       )}
     </div>
   );
-};
+}
 
 export default App;
