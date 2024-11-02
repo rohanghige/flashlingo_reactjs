@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/flashlingo_reactjs/static/css/main.c419788f.css",
-    "main.js": "/flashlingo_reactjs/static/js/main.277ca96d.js",
+    "main.js": "/flashlingo_reactjs/static/js/main.dc569834.js",
     "static/js/453.1cea3136.chunk.js": "/flashlingo_reactjs/static/js/453.1cea3136.chunk.js",
     "index.html": "/flashlingo_reactjs/index.html",
     "main.c419788f.css.map": "/flashlingo_reactjs/static/css/main.c419788f.css.map",
-    "main.277ca96d.js.map": "/flashlingo_reactjs/static/js/main.277ca96d.js.map",
+    "main.dc569834.js.map": "/flashlingo_reactjs/static/js/main.dc569834.js.map",
     "453.1cea3136.chunk.js.map": "/flashlingo_reactjs/static/js/453.1cea3136.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c419788f.css",
-    "static/js/main.277ca96d.js"
+    "static/js/main.dc569834.js"
   ]
 }
